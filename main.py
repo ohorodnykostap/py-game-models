@@ -1,7 +1,6 @@
 import os
 import django
 import json
-from django.utils import timezone
 from db.models import Race, Skill, Player, Guild
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
@@ -48,7 +47,6 @@ def main() -> None:
                 "bio": player_data.get("bio", ""),
                 "race": race,
                 "guild": guild,
-                "created_at": timezone.now(),
             }
         )
 

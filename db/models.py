@@ -1,6 +1,5 @@
 from django.db import models
 from typing import Optional
-from django.utils import timezone
 from datetime import datetime
 
 
@@ -49,7 +48,7 @@ class Player(models.Model):
         blank=True,
         related_name="members"
     )
-    created_at: datetime = models.DateTimeField(default=timezone.now)
+    created_at: datetime = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return self.nickname
